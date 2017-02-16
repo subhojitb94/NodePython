@@ -18,13 +18,13 @@ CRUD.prototype.configureExpress = function(connection) {
       var router = express.Router();
       app.use('/api', router);
 
-      router.post("/users",function(req,res){
-        console.log(req.body.uid);
+      router.post("/cardDetect",function(req,res){
+        console.log("card detected, uid: "+req.body.uid);
         res.send("Succsess!!")  
       }); 
 
        router.get("/",function(req,res){
-        console.log("Welome to our api powered by node js");  
+        console.log("Card Detected");  
         res.send("Succsess!!")
       }); 
       //var crud_router = new dataAccessLayer(router,connection,md5);
