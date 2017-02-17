@@ -15,9 +15,16 @@ app.get('/', function(req, res){
 
 // Everytime you tag in this will be triggered.
 app.post('/cardDetect',function(req, res){
-	console.log(req.body);
+	var user='';	
+	if(req.body.uid=='16017213580'){
+		user='Subhojit';	
+	}	
+	if(req.body.uid=='52205391'){
+		user='Saurav';
+	}
+console.log(req.body.uid);
 	res.send("Hello"+ req.body.uid); 
-	io.sockets.emit("rfid", req.body.uid);
+	io.sockets.emit("rfid", user);
 	// Sends the RFID Serial Number through Socket.IO
 });
 
