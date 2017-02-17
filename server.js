@@ -14,7 +14,7 @@ app.get('/', function(req, res){
 });
 
 // Everytime you tag in this will be triggered.
-app.post('/card',function(req, res){
+app.post('/cardDetect',function(req, res){
 	console.log(req.body);
 	res.send("Hello"+ req.body.uid); 
 	io.sockets.emit("rfid", req.body.uid);
